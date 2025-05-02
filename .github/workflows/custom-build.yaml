@@ -13,17 +13,18 @@ on:
         required: true
         default: false
         type: boolean
+        
+env:
+  UPSTREAM_SOURCE_REPO: "pesa1234/openwrt"
+  UPSTREAM_RELEASE: "2025-04-19_r29721-5111451803_next-r4.5.34.rss.mtk"
+  UPSTREAM_RELEASE_CONFIG: "https://raw.githubusercontent.com/pesa1234/MT6000_cust_build/refs/heads/main/2025-04-19_r29721-5111451803_next-r4.5.34.rss.mtk/targets/mediatek/filogic/config.buildinfo"
+  UPSTREAM_RELEASE_REPO: "https://github.com/pesa1234/MT6000_cust_build"
+  UPSTREAM_RELEASE_BRANCH: "main"
 
 jobs:
   build:
     name: Build and Release
     runs-on: ubuntu-22.04
-    env:
-      UPSTREAM_SOURCE_REPO: "https://github.com/pesa1234/openwrt.git"
-      UPSTREAM_RELEASE: "2025-04-19_r29721-5111451803_next-r4.5.34.rss.mtk"
-      UPSTREAM_RELEASE_CONFIG: "https://raw.githubusercontent.com/pesa1234/MT6000_cust_build/refs/heads/main/2025-04-19_r29721-5111451803_next-r4.5.34.rss.mtk/targets/mediatek/filogic/config.buildinfo"
-      UPSTREAM_RELEASE_REPO: "https://github.com/pesa1234/MT6000_cust_build"
-      UPSTREAM_RELEASE_BRANCH: "main"
 
     steps:
       - name: Set current date and time in environment
